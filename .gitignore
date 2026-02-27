@@ -1,0 +1,8 @@
+'groq api key.txt'
+django_local\.venv
+__pycache__/
+Frontend\.venv
+.env
+.venv/
+pycache/
+*.pyc

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCloud Tips</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 780px; margin: 32px auto; padding: 0 16px; }
+        h1 { margin-bottom: 12px; }
+        form { margin-bottom: 24px; padding: 16px; border: 1px solid #ddd; border-radius: 8px; }
+        label { display: block; margin-top: 8px; font-weight: 600; }
+        input, textarea { width: 100%; margin-top: 6px; padding: 8px; }
+        button { margin-top: 12px; padding: 10px 14px; }
+        ul { list-style: none; padding: 0; }
+        li { border: 1px solid #eee; border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Local Sustainability Tips</h1>
+    <p>Submit a tip below. Data is stored in local SQLite.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Tip</button>
+    </form>
+
+    <h2>Saved Tips</h2>
+    <ul>
+        {% for tip in tips %}
+            <li>
+                <strong>{{ tip.title }}</strong><br>
+                <span>{{ tip.description }}</span><br>
+                <small>{{ tip.created_at }}</small>
+            </li>
+        {% empty %}
+            <li>No tips yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
