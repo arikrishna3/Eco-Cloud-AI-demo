@@ -227,7 +227,7 @@ infrastructure automation, and environmental impact modeling into a
 unified operational system.
 
 ## Business model
-Eco-Cloud AI is geared for:
+Eco-Cloud AI is geared for
 - B2B SaaS for Enterprises
 - Subscription based Revenue Model
 - Carbon Credit for companies
